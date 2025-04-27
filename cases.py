@@ -34,7 +34,9 @@ cases = {
     "Gamma 2 Case": 7,
     "Operation Breakout Weapon Case": 29,
     "Operation Phoenix Weapon Case": 16,
-    "Falchion Case": 8
+    "Falchion Case": 8,
+    "Recoil Case": 8,
+    "Dreams & Nightmares Case": 8,
 }
 
 total_value = 0
