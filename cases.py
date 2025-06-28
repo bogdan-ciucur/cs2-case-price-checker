@@ -15,7 +15,7 @@ def get_case_price(case_name):
     return None
 
 cases = {
-    "Fracture Case": 34,
+    "Fracture Case": 35,
     "Snakebite Case": 4,
     "Clutch Case": 13,
     "Prisma Case": 5,
