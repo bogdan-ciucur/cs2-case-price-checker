@@ -38,6 +38,7 @@ cases = {
     "Recoil Case": 74,
     "Dreams & Nightmares Case": 2,
     "Kilowatt Case": 3,
+    "Revolution Case": 1,
 }
 
 total_value = 0
