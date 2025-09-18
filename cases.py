@@ -36,7 +36,7 @@ cases = {
     "Operation Phoenix Weapon Case": 16,
     "Falchion Case": 8,
     "Recoil Case": 74,
-    "Dreams & Nightmares Case": 2,
+    "Dreams & Nightmares Case": 3,
     "Kilowatt Case": 4,
     "Revolution Case": 3,
 }
