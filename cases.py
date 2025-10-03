@@ -1,18 +1,39 @@
 import requests
 import time
+import re
 
-def get_case_price(case_name):
-    url = f"https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name={case_name}"
-    response = requests.get(url)
-    if response.status_code == 200:
-        data = response.json()
-        if "lowest_price" in data:
-            price_str = data["lowest_price"].replace("\u20ac", "").replace(",", ".")
-            try:
-                return float(price_str)
-            except ValueError:
-                print(f"Warning: Could not convert price '{price_str}' for {case_name}")
+def parse_price(price_str: str):
+    """Extracts numeric value from price string like '3,50€', '€3.50', 'R$ 1,23'."""
+    if not price_str:
+        return None
+    match = re.search(r"[\d.,]+", price_str)
+    if match:
+        return float(match.group(0).replace(",", "."))
     return None
+
+def get_case_price(case_name: str):
+    url = f"https://steamcommunity.com/market/priceoverview/?appid=730&currency=3&market_hash_name={case_name}"
+    try:
+        response = requests.get(url, timeout=5)
+        response.raise_for_status()
+    except requests.RequestException as e:
+        print(f"Request error for {case_name}: {e}")
+        return None
+
+    try:
+        data = response.json()
+    except ValueError:
+        print(f"Invalid JSON response for {case_name}")
+        return None
+
+    if not data.get("success"):
+        print(f"No price data for {case_name}")
+        return None
+
+    price = parse_price(data.get("lowest_price", ""))
+    if price is None:
+        print(f"Warning: Could not parse price '{data.get('lowest_price')}' for {case_name}")
+    return price
 
 cases = {
     "Fracture Case": 40,
@@ -45,12 +66,12 @@ total_value = 0
 
 for case, amount in cases.items():
     price = get_case_price(case)
-    if price:
+    if price is not None:
         case_total = price * amount
         total_value += case_total
         print(f"{case}: {amount} x {price:.2f}€ = {case_total:.2f}€")
     else:
         print(f"Could not fetch price for {case}")
-    time.sleep(1)  # To prevent rate-limiting
+    time.sleep(1)  # To reduce chance of rate-limiting
 
 print(f"\nTotal Inventory Value: {total_value:.2f}€")
