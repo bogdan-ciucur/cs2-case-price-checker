@@ -37,7 +37,7 @@ cases = {
     "Falchion Case": 8,
     "Recoil Case": 75,
     "Dreams & Nightmares Case": 3,
-    "Kilowatt Case": 4,
+    "Kilowatt Case": 5,
     "Revolution Case": 3,
 }
 
