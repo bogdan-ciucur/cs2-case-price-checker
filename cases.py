@@ -1,6 +1,7 @@
 import requests
 import time
 import re
+import random
 
 def parse_price(price_str: str):
     """Extracts numeric value from price string like '3,50€', '€3.50', 'R$ 1,23'."""
@@ -72,6 +73,8 @@ for case, amount in cases.items():
         print(f"{case}: {amount} x {price:.2f}€ = {case_total:.2f}€")
     else:
         print(f"Could not fetch price for {case}")
-    time.sleep(1)  # To reduce chance of rate-limiting
+
+    delay = random.uniform(1, 2)
+    time.sleep(delay)
 
 print(f"\nTotal Inventory Value: {total_value:.2f}€")
