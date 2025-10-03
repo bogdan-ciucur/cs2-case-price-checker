@@ -1,0 +1,1 @@
+this a price checker for cs2, you can replace the cases with whatever cases you have
