@@ -59,9 +59,9 @@ cases = {
     "Falchion Case": 8,
     "Recoil Case": 76,
     "Dreams & Nightmares Case": 5,
-    "Kilowatt Case": 6,
-    "Revolution Case": 4,
-    "Sealed Genesis Terminal": 1,
+    "Kilowatt Case": 7,
+    "Revolution Case": 5,
+    "Sealed Genesis Terminal": 4,
 }
 
 total_value = 0
