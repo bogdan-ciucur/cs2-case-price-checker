@@ -60,7 +60,7 @@ cases = {
     "Recoil Case": 76,
     "Dreams & Nightmares Case": 5,
     "Kilowatt Case": 7,
-    "Revolution Case": 6,
+    "Revolution Case": 7,
     "Sealed Genesis Terminal": 4,
 }
 
