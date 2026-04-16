@@ -59,8 +59,8 @@ cases = {
     "Falchion Case": 8,
     "Recoil Case": 78,
     "Dreams & Nightmares Case": 6,
-    "Kilowatt Case": 7,
-    "Revolution Case": 9,
+    "Kilowatt Case": 9,
+    "Revolution Case": 10,
     "Sealed Genesis Terminal": 4,
 }
 
