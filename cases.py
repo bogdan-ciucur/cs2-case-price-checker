@@ -58,9 +58,9 @@ cases = {
     "Operation Phoenix Weapon Case": 16,
     "Falchion Case": 8,
     "Recoil Case": 78,
-    "Dreams & Nightmares Case": 6,
+    "Dreams & Nightmares Case": 8,
     "Kilowatt Case": 9,
-    "Revolution Case": 10,
+    "Revolution Case": 11,
     "Sealed Genesis Terminal": 4,
 }
 
